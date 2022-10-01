@@ -1,6 +1,6 @@
-Expense Tracker App
+#Expense Tracker App
 
-Background
+#Background
 This app helps a client to keep track of his daily expenses. Every expense belongs to a category. Examples of categories are: Food, Rent, Transport, Telephone, Utilities, etc. Every expense has a narration, an amount, and a date of expenditure. The app will sum up all expenses within a month, and generate a report showing which category consumed the most of the client’s income. A similar report will be generated for a whole year.
 
 Task
