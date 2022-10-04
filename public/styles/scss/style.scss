@@ -8,40 +8,44 @@ body {
         display: flex;
         aside {
             max-width: 18.7%;
-            padding: 30px 0 30px 30px;
-            border: 1px solid red;
+            padding: 27px 0 30px 30px;
             div a { // logo container
-                padding: 5px 30px 22px 20px;
+                margin-right: 14px;
+                padding: 10px 30px 22px 20px;
                 border-bottom: 1px solid $blue-700;
                 img { // logo image
                     width: 60%;
                 }
             }
-            nav {
-                margin-top: 20px;
-                border: 1px solid black;
+            nav { // sidebar nav
+                margin-top: 24px;
                 ul {
-                    border: 1px solid yellow;
                     padding: 0;
                     li {
                         height: 60px;
                         display: flex;
                         align-items: flex-start;
-                        border: 1px solid red;
+                        &:hover > a {
+                            color: $white;
+                            background-color: $blue-500;
+                        }
+                        &:nth-child(1) {
+                            @include active-sidebar-tab;
+                        }
                         a {
                             width: 100%;
                             color: $white;
                             display: flex;
                             align-items: center;
-                            padding: 6px 100% 6px 20px;
+                            padding: 7px 100% 7px 20px;
                             @include verySmall-font-size;
-                            border-radius: 50px;
-                            border: 1px solid green;
+                            border-radius: 50px 0 0 50px;
                             i {
-                                @include sideBar-icon;
+                                @include big-icon;
                             }
                         }
-                    }
+
+                    }  
                 }
             }
         }
@@ -76,9 +80,13 @@ body {
                                 position: relative;
                                 top: 3px;
                             }
+                            li:first-child a {
+                                color: $blue-600;
+                            }
                             li:last-child {
                                 display: flex;
                                 align-items: center;
+                                color: $grey-500;
                             }
                         }
                     }
@@ -91,15 +99,24 @@ body {
                     div:first-child { // search input
                         display: flex;
                         justify-content: flex-end;
+                        transition: 0.4s;
                         input {
                             width: 100%;
                             border: none;
                             padding: 7px 15px;
                             border-radius: 50px;
                             background-color: $unhovered-grey;
+                            transition: all 0.7s ease-in-out;
                             &:hover, &:focus {
-                                outline: 1px solid $grey-300;
+                                outline: none;
+                                transition: all 0.4s ease-in-out;
                                 background-color: $white;
+                            }
+                            &:focus-within {
+                                width: 350px;
+                                outline: 1px solid $grey-300;
+                                transition-property: width;
+                                transition-duration: 100ms;
                             }
                         }
                         ::placeholder {
@@ -115,14 +132,14 @@ body {
                         }
                     }
                     div:nth-child(2) { // bell container
-                        width: 7%;
+                        width: 8.1%;
                         display: flex;
                         justify-content:center;
                         font-family: sans-serif;
                         a {
                             i { // bell icon
                                 display: flex;
-                                font-size: 20px;
+                                font-size: 19px;
                                 color: $grey-500;
                                 div {
                                     width: 8px;
@@ -135,7 +152,7 @@ body {
                         }
                     }
                     div:last-child { // user profile photo
-                        width: 4.4%;
+                        width: 4.3%;
                         display: flex;
                         justify-content: flex-end;
                         a {
@@ -146,6 +163,88 @@ body {
                                 border-radius: 50%;
                             }
                         }
+                    }
+                }
+            }
+
+            section { // contents section
+                .summaryTitle {
+                    margin-top: 33px;
+                    h2 {
+                        @include h2;
+                        color: $black-900;
+                    }
+                }
+                .summaryCardsWrapper {
+                    display: flex;
+                    margin-top: 30px;
+                    justify-content: space-between;
+                    .summaryCard {
+                        width: 23.4%;
+                        display: flex;
+                        border-radius: 7px;
+                        flex-direction: column;
+                        background-color: $white;
+                        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.164);
+                        a {
+                            border-radius: 7px;
+                            padding: 20px;
+                        }
+                        .topRow {
+                            display: flex;
+                            align-items: flex-start;
+                            justify-content: space-between;
+                            div:first-child {
+                                i {
+                                    @include big-icon;
+                                }
+                            }
+                            .percentWrapper {
+                                ul {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    border-radius: 50px;
+                                    padding: 1px 8px;
+                                    background-color: $green-500;
+                                    li {
+                                        @include tiny-font-size;
+                                        color: $white;
+                                        i {
+                                            @include chevron-icon;
+                                            margin-left: 4px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .lowerRow {
+                            display: flex;
+                            flex-direction: column;
+                            margin-top: 20px;
+                            h1 {
+                                @include h1;
+                                color: $black-900;
+                            }
+                            h3 {
+                                @include h3;
+                                color: $grey-500;
+                                margin-top: 10px;
+                                padding-top: 10px;
+                                border-top: 1px solid $grey-300;
+                            }
+                        }
+                    }
+                }
+                .reportsWrapper {
+                    height: 250px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 40px;
+                    h4 {
+                        @include h2;
+                        color: $black-900;
                     }
                 }
             }

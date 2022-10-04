@@ -4,16 +4,47 @@ $blue-500: rgb(59 130 246);
 $blue-600: rgb(37, 100, 235);
 $blue-700: rgb(29 78 216);
 $white: rgb(255, 255, 255);
+$grey-200: rgb(248 250 252);
 $grey-300: rgb(222, 229, 237);
 $grey-400: rgb(241, 245, 249);
 $grey-500: rgb(100, 116, 139);
 $red-500: rgb(221, 46, 47);
+$black-900: rgb(23 23 23);
+$green-500: rgb(132, 204, 22);
 
 // states
 $unhovered-grey: rgba(0, 0, 0, 0.05);
 $hovered-grey: rgba(0, 0, 0, 0.075);
+@mixin active-sidebar-shapes {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: url("../../img/navShape.svg");
+    background-size: 30px 30px;
+    position: absolute;
+    left: 17.2%;
+}
+@mixin active-sidebar-tab {
+    &:first-child::before {
+        @include active-sidebar-shapes();
+        transform: rotate(90deg) scale(1.04);
+        top: 82px;
+    }
+    &:first-child::after {
+        @include active-sidebar-shapes();
+        transform: rotate(0deg) scale(1.04);
+        top: 162px;
+    }
+    a {
+        color: $blue-600;
+        background-color: $grey-400;
+    }
+}
 
 // font sizes
+@mixin tiny-font-size {
+    font-size: .8rem;
+}
 @mixin verySmall-font-size {
     font-size: .9rem;
     font-weight: 400;
@@ -22,8 +53,23 @@ $hovered-grey: rgba(0, 0, 0, 0.075);
     font-size: 1rem;
     font-weight: 400;
 }
+@mixin h1 {
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+@mixin h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+@mixin h3 {
+    font-size: 1rem;
+    font-weight: 400;
+}
 
 // icon sizes
-@mixin sideBar-icon {
+@mixin big-icon {
     font-size: 24px;
+}
+@mixin chevron-icon {
+    font-size: 11px;
 }
