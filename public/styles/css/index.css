@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+*, img, a, ul, li, p, h1, h2, h3, h4, input {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.form-select:focus {
+  box-shadow: none !important;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+
+section .summaryCardsWrapper {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+section .summaryCardsWrapper .summaryCard {
+  width: 23.4%;
+  display: flex;
+  border-radius: 7px;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.164);
+}
+section .summaryCardsWrapper .summaryCard a {
+  border-radius: 7px;
+  transition: all 0.3s ease-in-out;
+  padding: 20px;
+}
+section .summaryCardsWrapper .summaryCard:hover {
+  transform: scale(1.1);
+  transition-duration: 300ms;
+  transition: all 0.3s ease-out;
+}
+section .summaryCardsWrapper .summaryCard .topRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+section .summaryCardsWrapper .summaryCard .topRow div:first-child i {
+  font-size: 24px;
+}
+section .summaryCardsWrapper .summaryCard .topRow .percentWrapper ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  padding: 1px 8px;
+  background-color: rgb(132, 204, 22);
+}
+section .summaryCardsWrapper .summaryCard .topRow .percentWrapper ul li {
+  font-size: 0.8rem;
+  color: rgb(255, 255, 255);
+}
+section .summaryCardsWrapper .summaryCard .topRow .percentWrapper ul li i {
+  font-size: 11px;
+  margin-left: 4px;
+}
+section .summaryCardsWrapper .summaryCard .lowerRow {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+section .summaryCardsWrapper .summaryCard .lowerRow h1 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: rgb(23, 23, 23);
+}
+section .summaryCardsWrapper .summaryCard .lowerRow h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(100, 116, 139);
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgb(222, 229, 237);
+}
+section .reportsWrapper {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+section .reportsWrapper h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(23, 23, 23);
+}
+
+/*# sourceMappingURL=index.css.map */

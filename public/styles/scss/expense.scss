@@ -1,0 +1,62 @@
+@import './myBootstrap';
+@import './animations';
+@import './reset';
+
+
+.tableFirstRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .primaryBtn {
+        button:first-child {
+            @include primaryBtn;
+        }
+    }
+    .modal-footer {
+        button {
+            @include primaryBtn;
+        }
+    }
+    .pagination {
+        @include verySmall-font-size;
+        color: $black-900;
+    }
+    .searchInput {
+        @include search;
+        input {
+            width: 300px;
+            transition: none;
+            border-radius: 10px;
+            background-color: $white;
+            outline: 1px solid $grey-300;
+            &:hover, &:focus {
+                outline: 1px solid $grey-300;
+            }
+            &:focus-within {
+                width: 300px;
+                outline: 4px solid $grey-300;
+            }
+        }
+    }
+}
+
+table {
+    thead {
+        tr {
+            th {
+            @include h4;
+            text-transform: uppercase;
+            color: $grey-700;
+            }
+        }
+    }
+    tbody {
+        tr {
+            // th {
+            @include small-font-size;
+            // text-transform: uppercase;
+            color: $grey-700;
+            // }
+        }
+    }
+}

@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
-*, img, a, ul, li, p, h1, h2, h3, h4 {
+*, img, a, ul, li, p, h1, h2, h3, h4, input {
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.form-select:focus {
+  box-shadow: none !important;
 }
 
 input[type=search]::-webkit-search-decoration,
@@ -203,84 +211,13 @@ body div main header .rightContainer div:last-child a img {
   width: 100%;
   border-radius: 50%;
 }
-body div main section .summaryTitle {
+body div main .summaryTitle {
   margin-top: 33px;
 }
-body div main section .summaryTitle h2 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: rgb(23, 23, 23);
-}
-body div main section .summaryCardsWrapper {
-  display: flex;
-  margin-top: 30px;
-  justify-content: space-between;
-}
-body div main section .summaryCardsWrapper .summaryCard {
-  width: 23.4%;
-  display: flex;
-  border-radius: 7px;
-  flex-direction: column;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.164);
-}
-body div main section .summaryCardsWrapper .summaryCard a {
-  border-radius: 7px;
-  padding: 20px;
-}
-body div main section .summaryCardsWrapper .summaryCard .topRow {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-body div main section .summaryCardsWrapper .summaryCard .topRow div:first-child i {
-  font-size: 24px;
-}
-body div main section .summaryCardsWrapper .summaryCard .topRow .percentWrapper ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 50px;
-  padding: 1px 8px;
-  background-color: rgb(132, 204, 22);
-}
-body div main section .summaryCardsWrapper .summaryCard .topRow .percentWrapper ul li {
-  font-size: 0.8rem;
-  color: rgb(255, 255, 255);
-}
-body div main section .summaryCardsWrapper .summaryCard .topRow .percentWrapper ul li i {
-  font-size: 11px;
-  margin-left: 4px;
-}
-body div main section .summaryCardsWrapper .summaryCard .lowerRow {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-}
-body div main section .summaryCardsWrapper .summaryCard .lowerRow h1 {
-  font-size: 1.9rem;
-  font-weight: 500;
-  color: rgb(23, 23, 23);
-}
-body div main section .summaryCardsWrapper .summaryCard .lowerRow h3 {
-  font-size: 1rem;
-  font-weight: 400;
-  color: rgb(100, 116, 139);
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid rgb(222, 229, 237);
-}
-body div main section .reportsWrapper {
-  height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;
-}
-body div main section .reportsWrapper h4 {
+body div main .summaryTitle h2 {
   font-size: 1.2rem;
   font-weight: 500;
   color: rgb(23, 23, 23);
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=general.css.map */

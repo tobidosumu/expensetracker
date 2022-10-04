@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 // background colors
 $blue-500: rgb(59 130 246); 
 $blue-600: rgb(37, 100, 235);
@@ -8,6 +9,8 @@ $grey-200: rgb(248 250 252);
 $grey-300: rgb(222, 229, 237);
 $grey-400: rgb(241, 245, 249);
 $grey-500: rgb(100, 116, 139);
+$grey-600: rgb(30 41 59);
+$grey-700: rgb(15 23 42);
 $red-500: rgb(221, 46, 47);
 $black-900: rgb(23 23 23);
 $green-500: rgb(132, 204, 22);
@@ -45,12 +48,12 @@ $hovered-grey: rgba(0, 0, 0, 0.075);
 @mixin tiny-font-size {
     font-size: .8rem;
 }
-@mixin verySmall-font-size {
-    font-size: .9rem;
+@mixin small-font-size {
+    font-size: .85rem;
     font-weight: 400;
 }
-@mixin small-font-size {
-    font-size: 1rem;
+@mixin verySmall-font-size {
+    font-size: .9rem;
     font-weight: 400;
 }
 @mixin h1 {
@@ -65,6 +68,15 @@ $hovered-grey: rgba(0, 0, 0, 0.075);
     font-size: 1rem;
     font-weight: 400;
 }
+@mixin h4 {
+    font-size: .85rem;
+    font-weight: 500;
+}
+@mixin primaryBtn {
+    font-size: .9rem;
+    font-weight: 400;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+}
 
 // icon sizes
 @mixin big-icon {
@@ -72,4 +84,41 @@ $hovered-grey: rgba(0, 0, 0, 0.075);
 }
 @mixin chevron-icon {
     font-size: 11px;
+}
+
+// search input function
+@mixin search { 
+    display: flex;
+    justify-content: flex-end;
+    transition: 0.4s;
+    input {
+        width: 100%;
+        border: none;
+        padding: 7px 15px;
+        border-radius: 50px;
+        background-color: $unhovered-grey;
+        transition: all 0.7s ease-in-out;
+        &:hover, &:focus {
+            outline: none;
+            transition: all 0.4s ease-in-out;
+            background-color: $white;
+        }
+        &:focus-within {
+            width: 350px;
+            outline: 1px solid $grey-300;
+            transition-property: width;
+            transition-duration: 100ms;
+        }
+    }
+    ::placeholder {
+        color: $grey-500;
+        @include verySmall-font-size;
+    }
+    i { // search icon
+        position: relative;
+        top: 9px;
+        left: -14px;
+        margin-left: -15px;
+        color: $grey-500;
+    }
 }

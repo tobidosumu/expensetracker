@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./styles/css/style.css">
+    <link rel="stylesheet" href="./styles/css/general.css">
+    <link rel="stylesheet" href="./styles/css/index.css">
   </head>
 <body>
+
  <div>  <!-- wrapper -->
     <aside>
       <div id="logo"><a href="#"><img src="./img/logo.svg" alt="expense tracker logo"></a></div>
@@ -32,6 +34,7 @@
             </ol>
           </nav>
         </div>
+
         <div class="rightContainer">
           <div><input type="search" placeholder="Search..."><i class="bi bi-search"></i></div>
           <div><a href="#"><i class="bi bi-bell"><div></div></i></a></div>
@@ -73,7 +76,7 @@
               </div>
               <div class="lowerRow">
                 <h1>N74,000</h1>
-                <h3>All Expenses</h3>
+                <h3>Total Expenses</h3>
               </div>
               <div class="foregroundDesign"></div> <!-- design background -->
             </a>
@@ -123,6 +126,6 @@
   </div>
 
   <!-- JS scripts  -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
