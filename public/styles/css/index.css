@@ -28,22 +28,21 @@ section .summaryCardsWrapper {
   justify-content: space-between;
 }
 section .summaryCardsWrapper .summaryCard {
-  width: 23.4%;
+  width: 23.2%;
   display: flex;
   border-radius: 7px;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.164);
+  transition: all 0.2s;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.075);
 }
 section .summaryCardsWrapper .summaryCard a {
   border-radius: 7px;
-  transition: all 0.3s ease-in-out;
   padding: 20px;
 }
 section .summaryCardsWrapper .summaryCard:hover {
-  transform: scale(1.1);
-  transition-duration: 300ms;
-  transition: all 0.3s ease-out;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.151);
 }
 section .summaryCardsWrapper .summaryCard .topRow {
   display: flex;
@@ -52,6 +51,7 @@ section .summaryCardsWrapper .summaryCard .topRow {
 }
 section .summaryCardsWrapper .summaryCard .topRow div:first-child i {
   font-size: 24px;
+  display: flex;
 }
 section .summaryCardsWrapper .summaryCard .topRow .percentWrapper ul {
   display: flex;

@@ -2,28 +2,26 @@
 @import './animations.scss';
 @import './reset.scss';
 
-
 section { // contents section
     .summaryCardsWrapper {
         display: flex;
         margin-top: 30px;
         justify-content: space-between;
         .summaryCard {
-            width: 23.4%;
+            width: 23.2%;
             display: flex;
             border-radius: 7px;
             flex-direction: column;
             background-color: $white;
-            box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.164);
+            transition: all 0.2s;
+            box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.075);
             a {
                 border-radius: 7px;
-                transition: all .3s ease-in-out;
                 padding: 20px;
             }
             &:hover {
-                transform: scale(1.1);
-                transition-duration: 300ms;
-                transition: all .3s ease-out;
+                transform: scale(1.05);
+                box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.151);
             }
             .topRow {
                 display: flex;
@@ -32,6 +30,7 @@ section { // contents section
                 div:first-child {
                     i {
                         @include big-icon;
+                        display: flex;
                     }
                 }
                 .percentWrapper {

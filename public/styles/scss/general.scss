@@ -16,7 +16,7 @@ body {
                 padding: 10px 30px 22px 20px;
                 border-bottom: 1px solid $blue-700;
                 img { // logo image
-                    width: 60%;
+                    width: 70%;
                 }
             }
             nav { // sidebar nav
@@ -27,33 +27,37 @@ body {
                         height: 60px;
                         display: flex;
                         align-items: flex-start;
-                        &:hover > a {
-                            color: $white;
-                            background-color: $blue-500;
-                        }
-                        &:nth-child(1) {
-                            @include active-sidebar-tab;
-                        }
+                        .active {
+                            @include active-sidebar-tab;  
+                        } 
                         a {
-                            width: 100%;
                             color: $white;
                             display: flex;
                             align-items: center;
                             padding: 7px 100% 7px 20px;
                             @include verySmall-font-size;
                             border-radius: 50px 0 0 50px;
+                            transition: all 0.9s ease-out;
                             i {
                                 @include big-icon;
                             }
+                            &:hover {
+                                color: $white;
+                                background-color: $blue-500;
+                            }
+                            // &:active {
+                            //     @include active-sidebar-tab;  
+                            //     border: 1px solid red;
+                            // }
                         }
-
+                     
                     }  
                 }
             }
         }
         main { // main
             max-width: 82.3%;
-            padding: 0 20px 20px;
+            padding: 0 22px 22px;
             border-radius: 30px;
             margin: 20px 32px 30px 10px;
             background-color: $grey-400;

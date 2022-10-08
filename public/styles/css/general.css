@@ -39,7 +39,7 @@ body div aside div a {
   border-bottom: 1px solid rgb(29, 78, 216);
 }
 body div aside div a img {
-  width: 60%;
+  width: 70%;
 }
 body div aside nav {
   margin-top: 24px;
@@ -52,38 +52,15 @@ body div aside nav ul li {
   display: flex;
   align-items: flex-start;
 }
-body div aside nav ul li:hover > a {
-  color: rgb(255, 255, 255);
-  background-color: rgb(59, 130, 246);
+body div aside nav ul li .active {
+  color: rgb(59, 130, 246);
+  background-color: rgb(241, 245, 249);
 }
-body div aside nav ul li:nth-child(1):first-child::before {
-  content: "";
-  width: 30px;
-  height: 30px;
-  background: url("../../img/navShape.svg");
-  background-size: 30px 30px;
-  position: absolute;
-  left: 17.2%;
-  transform: rotate(90deg) scale(1.04);
-  top: 82px;
-}
-body div aside nav ul li:nth-child(1):first-child::after {
-  content: "";
-  width: 30px;
-  height: 30px;
-  background: url("../../img/navShape.svg");
-  background-size: 30px 30px;
-  position: absolute;
-  left: 17.2%;
-  transform: rotate(0deg) scale(1.04);
-  top: 162px;
-}
-body div aside nav ul li:nth-child(1) a {
-  color: rgb(37, 100, 235);
+body div aside nav ul li .active:hover {
+  color: rgb(59, 130, 246);
   background-color: rgb(241, 245, 249);
 }
 body div aside nav ul li a {
-  width: 100%;
   color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
@@ -91,13 +68,18 @@ body div aside nav ul li a {
   font-size: 0.9rem;
   font-weight: 400;
   border-radius: 50px 0 0 50px;
+  transition: all 0.9s ease-out;
 }
 body div aside nav ul li a i {
   font-size: 24px;
 }
+body div aside nav ul li a:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(59, 130, 246);
+}
 body div main {
   max-width: 82.3%;
-  padding: 0 20px 20px;
+  padding: 0 22px 22px;
   border-radius: 30px;
   margin: 20px 32px 30px 10px;
   background-color: rgb(241, 245, 249);

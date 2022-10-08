@@ -28,21 +28,27 @@ $hovered-grey: rgba(0, 0, 0, 0.075);
     left: 17.2%;
 }
 @mixin active-sidebar-tab {
-    &:first-child::before {
-        @include active-sidebar-shapes();
-        transform: rotate(90deg) scale(1.04);
-        top: 82px;
-    }
-    &:first-child::after {
-        @include active-sidebar-shapes();
-        transform: rotate(0deg) scale(1.04);
-        top: 162px;
-    }
-    a {
-        color: $blue-600;
+    color: $blue-500;
+    background-color: $grey-400;
+    &:hover {
+        color: $blue-500;
         background-color: $grey-400;
     }
+    // &:first-child::before {
+    //     @include active-sidebar-shapes();
+    //     transform: rotate(90deg) scale(1.04);
+    //     top: 82px;
+    // }
+    // &:first-child::after {
+    //     @include active-sidebar-shapes();
+    //     transform: rotate(0deg) scale(1.04);
+    //     top: 162px;
+    // }
 }
+
+// @keyframes move-button-down {
+//     to {transform: translateY(50px);}
+// }
 
 // font sizes
 @mixin tiny-font-size {

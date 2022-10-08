@@ -17,9 +17,9 @@
       <div id="logo"><a href="#"><img src="./img/logo.svg" alt="expense tracker logo"></a></div>
       <nav>
         <ul>
-          <li><a href="#" class="side-menu-active"><i class="me-3 bi bi-house-door"></i>Dashboard</a></li>
-          <li><a href="#"><i class="me-3 bi bi-list-task"></i>Categories</a></li>
-          <li><a href="#"><i class="me-3 bi bi-activity"></i>Expenses</a></li>
+          <li><a href="./index.php" class="side-menu-active"><i class="me-3 bi bi-house-door"></i>Dashboard</a></li>
+          <li><a href="./category.php"><i class="me-3 bi bi-list-task"></i>Categories</a></li>
+          <li><a class="active" href="./expense.php"><i class="me-3 bi bi-activity"></i>Expenses</a></li>
         </ul>
       </nav>
     </aside>
@@ -30,7 +30,7 @@
           <nav class="-intro-x mr-auto hidden sm:flex">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Application</a></li>
-              <li class="" aria-current="page">Dashboard</li>
+              <li class="" aria-current="page">Expenses</li>
             </ol>
           </nav>
         </div>
