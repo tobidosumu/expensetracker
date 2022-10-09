@@ -28,10 +28,10 @@ $hovered-grey: rgba(0, 0, 0, 0.075);
     left: 17.2%;
 }
 @mixin active-sidebar-tab {
-    color: $blue-500;
+    color: $blue-700;
     background-color: $grey-400;
     &:hover {
-        color: $blue-500;
+        color: $blue-700;
         background-color: $grey-400;
     }
     // &:first-child::before {

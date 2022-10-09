@@ -53,11 +53,11 @@ body div aside nav ul li {
   align-items: flex-start;
 }
 body div aside nav ul li .active {
-  color: rgb(59, 130, 246);
+  color: rgb(29, 78, 216);
   background-color: rgb(241, 245, 249);
 }
 body div aside nav ul li .active:hover {
-  color: rgb(59, 130, 246);
+  color: rgb(29, 78, 216);
   background-color: rgb(241, 245, 249);
 }
 body div aside nav ul li a {
@@ -200,6 +200,12 @@ body div main .summaryTitle h2 {
   font-size: 1.2rem;
   font-weight: 500;
   color: rgb(23, 23, 23);
+}
+body div main .summaryTitle div {
+  margin: -8px 20px 0;
+}
+body div main .summaryTitle div h6 {
+  margin: 0;
 }
 
 /*# sourceMappingURL=general.css.map */

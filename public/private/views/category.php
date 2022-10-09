@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Tracker</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./styles/css/general.css">
-    <link rel="stylesheet" href="./styles/css/category.css">
-  </head>
-<body>
+<?php 
+  session_start();
+  require '../views/header.php'   
+?>
 
- <div>  <!-- wrapper -->
+<body>
+ <div>  <!-- category wrapper -->
     <aside>
-      <div id="logo"><a href="#"><img src="./img/logo.svg" alt="expense tracker logo"></a></div>
+      <div id="logo"><a href="#"><img src="../../img/logo.svg" alt="expense tracker logo"></a></div>
       <nav>
         <ul>
-          <li><a href="./index.php" class="side-menu-active"><i class="me-3 bi bi-house-door"></i>Dashboard</a></li>
+          <li><a href="../../index.php" class="side-menu-active"><i class="me-3 bi bi-house-door"></i>Dashboard</a></li>
           <li><a class="active" href="./category.php"><i class="me-3 bi bi-list-task"></i>Categories</a></li>
           <li><a href="./expense.php"><i class="me-3 bi bi-activity"></i>Expenses</a></li>
         </ul>
@@ -38,17 +30,27 @@
         <div class="rightContainer">
           <div><input type="search" placeholder="Search..."><i class="bi bi-search"></i></div>
           <div><a href="#"><i class="bi bi-bell"><div></div></i></a></div>
-          <div><a href="#"><img src="./img/erin-lindford.jpg" alt="user profile"></a></div>
+          <div><a href="#"><img src="../../img/erin-lindford.jpg" alt="user profile"></a></div>
         </div>
       </header>
 
       <section> <!-- table wrapper -->
-        <div class="summaryTitle"><h2>Categories</h2></div>
+        <div class="summaryTitle">
+          <h2>Categories</h2>
+          <!-- session message output -->
+          <?php if(isset($_SESSION['message'])) : ?>
+            <div class="alert alert-success p-2">
+              <h6>
+                <?= $_SESSION['message'] ?>
+              </h6>
+            </div>
+          <?php endif ?>
+        </div>
 
-        <div class="tableFirstRow my-4"> <!-- Button trigger modal -->
+        <div class="tableFirstRow my-4 pt-1"> <!-- Button trigger modal -->
           <div class="primaryBtn">
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Add New Category
+              <i class="bi bi-plus-square pe-2"></i> Add Category
             </button>
           </div>
 
@@ -56,26 +58,40 @@
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Create New Category</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="input-group my-4">
-                    <span class="input-group-text" id="addon-wrapping">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
-                        <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
-                        <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
-                      </svg>
-                    </span>
-                    <input type="text" class="form-control py-2" placeholder="Add category name" aria-label="Example text with button addon" aria-describedby="button-addon1">
+
+                <!-- form -->
+                <form action="./../controllers/processing/category_processing.php" method="post" class="w-100">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Category</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-success">Save changes</button>
-                </div>
+                  <div class="modal-body">
+                    <div class="d-flex flex-column mt-3 mb-4 w-100">
+                      
+                      <!-- label -->
+                      <label for="exampleFormControlInput1" class="form-label">Category Name:</label>
+
+                      <div class="input-group">
+                        <span class="input-group-text" id="addon-wrapping">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
+                            <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
+                            <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
+                          </svg>
+                        </span>
+
+                        <!-- input -->
+                        <input type="text" name="categoryName" class="form-control py-2" placeholder="Add category name">
+                      
+                      </div>
+                    </div>
+                  </div> <!-- modal body end -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" name="addNewCategoryBtn" class="btn btn-success"><i class="bi bi-plus-square pe-2"></i>Add category</button>
+                  </div>
+                </form> <!-- end of form -->
+
               </div>
             </div>
           </div> <!-- end of modal -->

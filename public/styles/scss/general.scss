@@ -45,12 +45,7 @@ body {
                                 color: $white;
                                 background-color: $blue-500;
                             }
-                            // &:active {
-                            //     @include active-sidebar-tab;  
-                            //     border: 1px solid red;
-                            // }
                         }
-                     
                     }  
                 }
             }
@@ -146,6 +141,12 @@ body {
                 h2 {
                     @include h2;
                     color: $black-900;
+                }
+                div {
+                    margin: -8px 20px 0;
+                    h6 {
+                        margin: 0;
+                    }
                 }
             }
         }
